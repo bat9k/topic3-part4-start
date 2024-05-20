@@ -24,6 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import com.topic3.android.reddit.R
 import com.topic3.android.reddit.routing.RedditRouter
+import com.topic3.android.reddit.routing.BackButtonAction
 import com.topic3.android.reddit.viewmodel.MainViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
@@ -76,6 +77,9 @@ fun ChooseCommunityScreen(viewModel: MainViewModel, modifier: Modifier = Modifie
             )
         )
         SearchedCommunities(communities, viewModel, modifier)
+    }
+    BackButtonAction {
+        RedditRouter.goBack()
     }
 }
 
